@@ -1,0 +1,223 @@
+html, body{
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+footer {
+	width: 100%;
+	border-top: 1px solid #ccc;
+	height: 60px;
+	margin-top: 30px;
+	padding: 20px;
+	padding-top: 10px;
+}
+
+footer p{
+	font-size: 12px;
+	color: #aaa;
+	text-align:center;
+	margin-bottom: 3px;
+}
+
+/*a, a:hover, a:focus, a:visited {
+	color: inherit;
+	text-decoration: inherit;
+}*/
+
+#km-title, #km-title:hover, #km-title:focus, #km-title:visited {
+	text-align: center;
+	font-size: 48px;
+}
+
+#km-title>a, #km-title:hover>a, #km-title:focus>a, #km-title:visited>a {
+	color: #222;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+#km-title strong{
+	color: #0047ab;
+}
+
+.km-header{
+	color: #222;
+	text-align: center;
+	font-size: 32px;
+}
+.km-header strong{
+	color: #0047ab;
+}
+
+.km-text {
+	padding: 0 100px;
+	text-align: center;
+}
+
+.genre-list {
+	padding: 0;
+}
+.genre-list>a {
+	
+	
+	margin:0;
+	border:0;
+	padding:0;
+	
+	overflow: hidden;
+	
+	background: black;
+}
+
+.genre-list>a>.genre-bg {
+	transition: all 0.4s ease-in-out;
+	opacity: 0.7;
+}
+
+.genre-list>a:hover>.genre-bg {
+	opacity: 0.4;
+}
+
+
+a>.genre-overlay {
+	transition: all 0.4s ease-in-out;
+	
+	position: absolute;
+	z-index: 3;
+	
+	padding: 55px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	height: 100%;
+	
+	transform: scale(1);
+}
+
+a:hover>.genre-overlay {
+	transform: scale(1.1);
+}
+
+.genre-image-container {
+	height: 80%;
+}
+
+.genre-title-container {
+	text-align: center;
+	color: white;
+	font-weight: 300;
+	height: 20%;
+}
+
+.genre-icon {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.genre-bg {
+	filter: blur(2px);
+	opacity: 0.7;
+	z-index: 2;
+}
+
+#song-list {
+	list-style-type: none;
+}
+
+#playlist-desc {
+	margin-bottom: 40px;
+}
+
+.track-row {
+	transition: all 0.2s ease-in-out;
+	
+	border: 1px solid #ccc;
+	border-bottom: none;
+	padding: 0px 8px;
+	color: black;
+	background: white;
+	
+	cursor: pointer;
+}
+
+.track-row:hover {
+	background: #0047ab;
+	color: white;
+}
+
+.track-row:last-of-type {
+	border-bottom: 1px solid #ccc;
+}
+
+.track-place, .track-name {
+	padding-top: 14px;
+	padding-left: 8px; 
+	padding-right: 8px;
+}
+
+.track-artists {
+	padding-top: 14px;
+	padding-left: 8px; 
+	padding-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+	.track-place, .track-name, .track-artists, .track-spacer {
+		padding: 14px 8px;
+	}
+}
+
+
+#play-overlay {
+	display: none;
+	
+	position: fixed;
+	background: white;
+	top: 30%;
+	left: 20%;
+	width: 60%;
+	height: auto;
+	
+	padding: 30px;
+	padding-top: 20px;
+	
+	z-index: 1000;
+}
+
+#play-underlay {
+	display: none;
+	
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0,0,0,0.6);
+	z-index: 100;
+}
+
+#track-name-overlay {
+	font-size: 32px;
+}
+
+.spotify-frame {
+	width: 100%;
+}
+
+.close-overlay {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #ccc;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+	z-index: 5;
+}
+
+.close-overlay:hover,
+.close-overlay:focus {
+    color: #888;
+    text-decoration: none;
+    cursor: pointer;
+}
