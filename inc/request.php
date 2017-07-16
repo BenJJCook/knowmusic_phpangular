@@ -1,8 +1,8 @@
 <?php
 	class SessionInfo {
-		private $client_id = 'b3a21ddcd7394245990fe886c8f51acd';
-		private $client_secret = '7a281a70377341fbafe86edeacf9c5e2';
-		private $redirect_uri = 'http://localhost:8888/callback';
+		private $client_id = 'API_ID';
+		private $client_secret = 'API_SECRET';
+		private $redirect_uri = 'CALLBACK_URI';
 		
 		private $account_url = 'https://accounts.spotify.com/api/token';
 		private $api_url = 'https://api.spotify.com/v1';

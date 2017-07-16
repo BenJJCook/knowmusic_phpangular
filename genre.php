@@ -8,7 +8,7 @@
 		
 			$genre = $_GET['g'];
 		
-			$si = new SessionInfo('b3a21ddcd7394245990fe886c8f51acd', '7a281a70377341fbafe86edeacf9c5e2', 'http://localhost:8888/callback');
+			$si = new SessionInfo('API_ID', 'API_SECRET', 'CALLBACK_URI');
 			
 			if(isset($_SESSION['tokenRetrieved'])){
 				$endTime = $_SESSION['tokenEndTime'];
