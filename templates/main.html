@@ -1,0 +1,21 @@
+<div id="genre-list" class="row">
+	<div class="col-xs-12">
+		<h2 class="km-header">Genre<strong>List</strong></h2>
+		<p class="km-text">
+			Pick a genre from below, to see the essentials list for each one.
+		</p>
+	</div>
+	<div class="genre-list col-xs-12 col-container">
+		<a  ng-href="{{ genre.genreUrl }}" class="col-xs-6 col-sm-3 col-md-2" ng-repeat="genre in genres">
+			<div class="genre-overlay">
+				<div class="genre-image-container">
+					<img class="img-responsive genre-icon" src="img/{{ genre.genreIcon }}" />
+				</div>
+				<div class="genre-title-container">
+					<h4>{{ genre.genreName }}</h4>
+				</div>
+			</div>
+			<img class="img-responsive genre-bg" src="img/{{ genre.genreBg }}" />
+		</a>
+	</div>
+</div>

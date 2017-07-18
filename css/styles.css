@@ -168,9 +168,7 @@ a:hover>.genre-overlay {
 }
 
 
-#play-overlay {
-	display: none;
-	
+#play-overlay {	
 	position: fixed;
 	background: white;
 	top: 30%;
@@ -184,9 +182,7 @@ a:hover>.genre-overlay {
 	z-index: 1000;
 }
 
-#play-underlay {
-	display: none;
-	
+#play-underlay {	
 	position: fixed;
 	top: 0;
 	left: 0;

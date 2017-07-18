@@ -87,8 +87,7 @@
 			
 			$hdr = array();
 			$hdr = array('Authorization: Bearer ' . $_SESSION['tokenValue']);
-			
-			curl_setopt($crl, CURLOPT_URL, $this->api_url . "/users/thechaoticlord/playlists/" . $playlistId);
+			curl_setopt($crl, CURLOPT_URL, $this->api_url . "/users/knowmusicsite/playlists/" . $playlistId);			
 			curl_setopt($crl, CURLOPT_HTTPHEADER, $hdr);
 			curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
 			
