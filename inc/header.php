@@ -22,7 +22,7 @@
 		<div class="container-fluid">
 			<header class="row">
 				<div class="col-xs-12">
-					<h1 id="km-title"><a href="index.php">Know<strong>Music</strong></a></h1>
+					<h1 id="km-title"><a href="#/">Know<strong>Music</strong></a></h1>
 					<p class="km-text">Ever wanted to get in to a type of music, but haven't been sure where to start? With KnowMusic, we take every genre we can find, and tell you all the essentials, classics and need-to-know songs for that type of music! Now you can jump straight in to a new music scene, without having to look like a daft newbie.</p>
 					<hr/>
 				</div>
