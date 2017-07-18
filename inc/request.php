@@ -1,8 +1,8 @@
 <?php
 	class SessionInfo {
-		private $client_id = 'API_ID';
-		private $client_secret = 'API_SECRET';
-		private $redirect_uri = 'CALLBACK_URI';
+		private $client_id = '';
+		private $client_secret = '';
+		private $redirect_uri = '';
 		
 		private $account_url = 'https://accounts.spotify.com/api/token';
 		private $api_url = 'https://api.spotify.com/v1';
@@ -37,16 +37,6 @@
 			$this->redirect_uri = $redirect_uri;
 		}
 		
-		public function requestAuthorize(){
-			$params = [
-				'client_id' => $this->getClientId(),
-				'client_secret' => $this->getClientSecret(),
-				'code' => $authorizationCode,
-				'grant_type' => 'authorization_code',
-				'redirect_uri' => $this->getRedirectUri(),
-			];
-		}
-		
 		public function requestAccessToken()
 		{
 			$crl = curl_init();
@@ -74,15 +64,7 @@
 		}
 		
 		public function requestPlaylist($playlistId)
-		{
-			/*$data = [
-				'client_id' => $this->getClientId(),
-				'client_secret' => $this->getClientSecret(),
-				'code' => $_SESSION['tokenValue'],
-				'grant_type' => 'authorization_code',
-				'redirect_uri' => $this->getRedirectUri(),
-			];*/
-			
+		{			
 			$crl = curl_init();
 			
 			$hdr = array();

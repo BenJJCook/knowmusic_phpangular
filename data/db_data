@@ -1,0 +1,7 @@
+{
+	"db_host"	: "DB HOST HERE",
+	"db_name"	: "DB NAME HERE",
+	"db_user"	: "DB USER HERE",
+	"db_pass"	: "DB PASS HERE"
+}
+	

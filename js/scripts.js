@@ -17,38 +17,44 @@ app.config(function ($routeProvider,$locationProvider) {
 	});
 });
 
-app.controller("mainCtrl", function ($scope) {
+app.controller("mainCtrl", function ($scope, $http) {
 	
-	function genre(genreUrl, genreIcon, genreBg, genreName) {
-		this.genreUrl = genreUrl;
-		this.genreIcon = genreIcon;
-		this.genreBg = genreBg;
-		this.genreName = genreName;
-	}
-	
-	var classical = new genre("#/genre/classical", "violin2.png", "violin_bg.jpg", "Classical");
-	var forties = new genre("#/genre/forties", "forty.png", "forty_bg.png", "1940's");
-	var hardstyle = new genre("#/genre/hardstyle", "hrdstyl.png", "hrdstyl_bg.jpg", "Hardstyle");
-	
-	var genreList = [classical, forties, hardstyle];
-	for(var i = 0; i < 9; i++){
-		genreList.push(new genre("#/", "cs.png", "cs_bg.png", "Coming Soon"));
-	}
-	
-	$scope.genres = genreList;
+	$http({
+        method : "GET",
+        url : "inc/getplaylists.php",
+    }).then(function mySuccess(response) {
+        $scope.playlistData = response.data;
+		
+		if($scope.playlistData.length < 12){
+			var diff = 12 - $scope.playlistData.length;
+			for(var i = 0; i < diff; i++){
+				$scope.playlistData.push(
+					{
+						playlist_bg_name:"cs_bg.png", 
+						playlist_icon_name:"cs.png", 
+						playlist_name:"Coming Soon", 
+						playlist_spotify_id:""
+					}
+				);
+			}
+		}
+		
+    }, function myError(response) {
+        $scope.error = response.statusText;
+    });
 	
 	
 });
 
 app.controller("genreCtrl", function ($scope, $routeParams, $http, $sce) {
-	$scope.genre = $routeParams.g;
+	$scope.genreId = $routeParams.g;
 	$scope.showMusicInfo = false;
 	$scope.chosenTrack = $sce.trustAsResourceUrl("about:blank");
 	
 	$http({
         method : "GET",
         url : "inc/getsong.php",
-		params : {genre : $scope.genre}
+		params : {genreId : $scope.genreId}
     }).then(function mySuccess(response) {
         $scope.playlistData = response.data;
 		$scope.tracks = $scope.playlistData.tracks.items;

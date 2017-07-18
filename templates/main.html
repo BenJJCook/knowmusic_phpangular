@@ -5,17 +5,18 @@
 			Pick a genre from below, to see the essentials list for each one.
 		</p>
 	</div>
+	
 	<div class="genre-list col-xs-12 col-container">
-		<a  ng-href="{{ genre.genreUrl }}" class="col-xs-6 col-sm-3 col-md-2" ng-repeat="genre in genres">
+		<a  ng-href="#/genre/{{ genre.playlist_spotify_id }}" class="col-xs-6 col-sm-3 col-md-2" ng-repeat="genre in playlistData">
 			<div class="genre-overlay">
 				<div class="genre-image-container">
-					<img class="img-responsive genre-icon" src="img/{{ genre.genreIcon }}" />
+					<img class="img-responsive genre-icon" src="img/{{ genre.playlist_icon_name }}" />
 				</div>
 				<div class="genre-title-container">
-					<h4>{{ genre.genreName }}</h4>
+					<h4>{{ genre.playlist_name }}</h4>
 				</div>
 			</div>
-			<img class="img-responsive genre-bg" src="img/{{ genre.genreBg }}" />
+			<img class="img-responsive genre-bg" src="img/{{ genre.playlist_bg_name }}" />
 		</a>
 	</div>
 </div>

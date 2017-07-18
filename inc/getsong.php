@@ -4,9 +4,12 @@
 	
 	require('request.php');
 		
-	$genre = $_GET['genre'];
+	$genreId = $_GET['genreId'];
 	
-	$si = new SessionInfo('API_ID', 'API_SECRET', 'CALLBACK_URI');
+	$rawJson = file_get_contents('../data/api_data');
+	$sessionData = json_decode($rawJson, true);
+	
+	$si = new SessionInfo($sessionData['api_id'], $sessionData['api_secret'], $sessionData['callback_url']);
 	
 	if(isset($_SESSION['tokenRetrieved'])){
 		$endTime = $_SESSION['tokenEndTime'];
@@ -17,17 +20,7 @@
 		$si->requestAccessToken();
 	}
 	
-	$genreCode = '';
-	
-	if($genre == 'forties') {
-		$genreCode = '5p2NoLNIffjvZwTubz08lf';
-	} elseif($genre == 'classical') {
-		$genreCode = '2RCz0WodupC8knkFN6hDg1';
-	} elseif($genre == 'hardstyle'){
-		$genreCode = '5MbHSyWiovmsQJTPOzhoxa';
-	}
-	
-	$jsonPlaylist = $si->requestPlaylist($genreCode);
+	$jsonPlaylist = $si->requestPlaylist($genreId);
 	
 	echo $jsonPlaylist;
 ?>

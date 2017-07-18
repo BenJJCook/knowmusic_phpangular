@@ -1,0 +1,5 @@
+{
+	"api_id" 		: "PUT API ID HERE",
+	"api_secret" 	: "PUT API SECRET HERE",
+	"callback_url" 	: "http://localhost:8888/"
+}
