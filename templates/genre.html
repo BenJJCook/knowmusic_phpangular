@@ -3,7 +3,7 @@
 		<h2 id="genre-name" class="km-header">{{ title }}</h2>
 		<p id="genre-description" class="km-text" ng-bind-html="desc"></p>
 	</div>
-	<ul id="song-list" class="col-xs-12">
+	<ul id="song-list" class="col-xs-10 col-xs-push-1">
 		<li id="{{ track.track.id }}" data-track-id="{{ track.track.id }}" data-track-name="{{ track.track.name }}" data-track-artists="{{ track.track.artists | artists }}" class="track-row row" ng-repeat="track in tracks" ng-click="showTrack($event)"><span class="track-place col-xs-1">{{ $index+1 }}</span><span class="track-name col-xs-11 col-sm-6">{{ track.track.name }}</span><span class="track-spacer col-xs-1 visible-xs"></span><span class="track-artists col-xs-11 col-sm-5">{{ track.track.artists | artists }}</span></li>
 	</ul>
 </section>

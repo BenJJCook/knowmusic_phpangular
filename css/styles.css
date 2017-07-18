@@ -20,6 +20,10 @@ footer p{
 	margin-bottom: 3px;
 }
 
+main {
+	margin-top: 20px;
+}
+
 /*a, a:hover, a:focus, a:visited {
 	color: inherit;
 	text-decoration: inherit;
@@ -41,12 +45,12 @@ footer p{
 }
 
 .km-header{
-	color: #222;
+	color: #E4F1FE;
 	text-align: center;
 	font-size: 32px;
 }
 .km-header strong{
-	color: #0047ab;
+	color: #FFF;
 }
 
 .km-text {
@@ -106,6 +110,7 @@ a:hover>.genre-overlay {
 	color: white;
 	font-weight: 300;
 	height: 20%;
+	margin: 0 -30px;
 }
 
 .genre-icon {
@@ -122,10 +127,14 @@ a:hover>.genre-overlay {
 
 #song-list {
 	list-style-type: none;
+	
+	margin-top: 20px;
 }
 
 #playlist-desc {
-	margin-bottom: 40px;
+	padding-bottom: 40px;
+	background: #0047ab;
+	color: #E4F1FE;
 }
 
 .track-row {
@@ -138,6 +147,9 @@ a:hover>.genre-overlay {
 	background: white;
 	
 	cursor: pointer;
+	
+	border-left: none;
+	border-right: none;
 }
 
 .track-row:hover {
@@ -180,6 +192,29 @@ a:hover>.genre-overlay {
 	padding-top: 20px;
 	
 	z-index: 1000;
+}
+
+@media only screen and (max-width: 700px){
+	#play-overlay {
+		left:0;
+		width: 100%;
+	}
+	
+	.km-text {
+		padding: 0 10px;
+	}
+}
+
+@media only screen and (max-height: 450px){
+	#play-overlay {
+		left:0;
+		width: 100%;
+		top: 10%;
+	}
+	
+	.km-text {
+		padding: 0 10px;
+	}
 }
 
 #play-underlay {	

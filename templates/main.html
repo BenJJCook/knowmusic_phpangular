@@ -1,5 +1,5 @@
 <div id="genre-list" class="row">
-	<div class="col-xs-12">
+	<div id="playlist-desc" class="col-xs-12">
 		<h2 class="km-header">Genre<strong>List</strong></h2>
 		<p class="km-text">
 			Pick a genre from below, to see the essentials list for each one.
@@ -7,7 +7,7 @@
 	</div>
 	
 	<div class="genre-list col-xs-12 col-container">
-		<a  ng-href="#/genre/{{ genre.playlist_spotify_id }}" class="col-xs-6 col-sm-3 col-md-2" ng-repeat="genre in playlistData">
+		<a  ng-href="#/genre/{{ genre.playlist_spotify_id }}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2" ng-repeat="genre in playlistData">
 			<div class="genre-overlay">
 				<div class="genre-image-container">
 					<img class="img-responsive genre-icon" ng-src="img/{{ genre.playlist_icon_name }}" />
