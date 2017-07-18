@@ -9,9 +9,9 @@ Check out a live version of the site, at http://www.benjamescook.com/knowmusic/
 # Todo List
 - [x] Implement AngularJS for handling Spotify API returns
 - [x] Put the playlist names + images + ids (maybe some meta info? The pages feel a bit bare right now) in a database and have index pull from that
-- [ ] Improve visuals to look more attractive
+- [x] Improve visuals to look more attractive
 - [ ] Error handling
-- [ ] Fix up mobile visuals
+- [x] Fix up mobile visuals
 - [ ] Split Angular in to separate files
 - [ ] Minify code
 - [ ] Documentation
