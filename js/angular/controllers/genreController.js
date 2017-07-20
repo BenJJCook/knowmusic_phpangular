@@ -1,8 +1,11 @@
+/* ---- Genre Page Controller ---- */
 app.controller("genreCtrl", ['$scope', '$routeParams', '$http', '$sce', '$location', function ($scope, $routeParams, $http, $sce, $location) {
+	
 	$scope.genreId = $routeParams.g;
 	$scope.showMusicInfo = false;
 	$scope.chosenTrack = $sce.trustAsResourceUrl("about:blank");
 	
+	/* ---- Initial List Request ---- */
 	$http({
         method : "GET",
         url : "inc/getsong.php",
@@ -12,7 +15,6 @@ app.controller("genreCtrl", ['$scope', '$routeParams', '$http', '$sce', '$locati
 		
 		if($scope.playlistData === "Error" || $scope.playlistData.error !== undefined || $scope.playlistData === ""){
 			var curPath = $location.path();
-			$location.path("/error/" + $scope.genreId);
 			$location.path("/error/" + $scope.genreId);
 		}
 		
@@ -25,6 +27,7 @@ app.controller("genreCtrl", ['$scope', '$routeParams', '$http', '$sce', '$locati
 		$location.path("/error/" + $scope.genreId);
     });
 	
+	/* ---- Overlay Trigger for Chosen Track ---- */
 	$scope.showTrack = function(event){
 		$scope.chosenTrack = $sce.trustAsResourceUrl("https://open.spotify.com/embed/track/" + event.currentTarget.id + "?theme=white");
 		$scope.showMusicInfo = true;
@@ -34,11 +37,13 @@ app.controller("genreCtrl", ['$scope', '$routeParams', '$http', '$sce', '$locati
 		$scope.chosenTrackArtists = event.currentTarget.attributes["data-track-artists"].value;
 	}
 	
+	/* ---- Hide Overlay ---- */
 	$scope.hideTrack = function(){
 		$scope.chosenTrack = $sce.trustAsResourceUrl("about:blank");
 		$scope.showMusicInfo = false;
 	}
 	
+	/* ---- Converting HTML entities to plain text (should probably put in to a service, later) ---- */
 	$scope.decodeHtml = function(toDecode){
 		var txt = document.createElement("textarea");
 		txt.innerHTML = toDecode;

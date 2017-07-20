@@ -1,6 +1,9 @@
+/* ---- Angular Start ---- */
 var app = angular.module("app", ["ngRoute"]);
 
-app.config(['$routeProvider', '$locationProvider', function ($routeProvider,$locationProvider) {	
+/* ---- Routing Setup ---- */
+app.config(['$routeProvider', '$locationProvider', function ($routeProvider,$locationProvider) {
+	
     $locationProvider.hashPrefix('');
     $routeProvider
     .when("/", {
@@ -18,4 +21,5 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider,$loc
 		templateUrl : "templates/main.html",
 		controller	: "mainCtrl"
 	});
+	
 }]);

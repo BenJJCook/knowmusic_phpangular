@@ -1,6 +1,7 @@
+/* ---- Artists Formatting Filter ---- */
 app.filter('artists', [function() {
+	
   return function(input) {
-
     var output = "";
 	for(var j = 0; j < input.length; j++){
 		output += input[j].name;
@@ -8,9 +9,7 @@ app.filter('artists', [function() {
 			output += ", ";
 		}
 	}
-
     return output;
-
   }
-
+  
 }]);

@@ -1,5 +1,7 @@
+/* ---- Main Page Controller ---- */
 app.controller("mainCtrl", ['$scope', '$http', '$location', function ($scope, $http, $location) {
 	
+	/* ---- Initial Playlist Request ---- */
 	$http({
         method : "GET",
         url : "inc/getplaylists.php",
@@ -28,6 +30,5 @@ app.controller("mainCtrl", ['$scope', '$http', '$location', function ($scope, $h
         var curPath = $location.path();
 		$location.path("/error/" + "main");
     });
-	
 	
 }]);

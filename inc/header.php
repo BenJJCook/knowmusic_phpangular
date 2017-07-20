@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php 
+
+	/**
+	 * The header of each page
+	 */
+
+session_start(); ?>
 
 <!doctype html>
 <html>
