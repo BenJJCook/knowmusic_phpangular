@@ -1,4 +1,4 @@
-# knowmusic_phpangular
+# knowmusic_phpangular v1.0.0
 A website that introduces the essential songs for each genre, to give people a kickstart when getting in to a new one. Uses the Spotify API, and I plan to utilise PHP with Angular here (would use node.js but the hosting company doesn't support it).
 
 # Note
@@ -14,4 +14,4 @@ Check out a live version of the site, at http://www.benjamescook.com/knowmusic/
 - [x] Fix up mobile visuals
 - [x] Split Angular in to separate files
 - [x] Minify code
-- [ ] Documentation (As in, just comment it. I'm not writing up a whole bunch of booklets on how to use something this simple.)
+- [x] Documentation (As in, just comment it. I'm not writing up a whole bunch of booklets on how to use something this simple.)
