@@ -252,3 +252,11 @@ a:hover>.genre-overlay {
     text-decoration: none;
     cursor: pointer;
 }
+
+.error-message {
+	margin:30px;
+	font-size: 18px;
+}
+.error-message a{
+	font-size: 20px;
+}

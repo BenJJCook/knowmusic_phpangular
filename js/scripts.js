@@ -11,19 +11,28 @@ app.config(function ($routeProvider,$locationProvider) {
         templateUrl : "templates/genre.html",
 		controller	: "genreCtrl"
     })
+	.when("/error/:code", {
+		templateUrl	: "templates/error.html",
+		controller	: "errorCtrl"
+	})
 	.otherwise({
 		templateUrl : "templates/main.html",
 		controller	: "mainCtrl"
 	});
 });
 
-app.controller("mainCtrl", function ($scope, $http) {
+app.controller("mainCtrl", function ($scope, $http, $location) {
 	
 	$http({
         method : "GET",
         url : "inc/getplaylists.php",
     }).then(function mySuccess(response) {
         $scope.playlistData = response.data;
+		
+		if($scope.playlistData === "Error"){
+			var curPath = $location.path();
+			$location.path("/error/" + "main");
+		}
 		
 		if($scope.playlistData.length < 12){
 			var diff = 12 - $scope.playlistData.length;
@@ -38,15 +47,15 @@ app.controller("mainCtrl", function ($scope, $http) {
 				);
 			}
 		}
-		
     }, function myError(response) {
-        $scope.error = response.statusText;
+        var curPath = $location.path();
+		$location.path("/error/" + "main");
     });
 	
 	
 });
 
-app.controller("genreCtrl", function ($scope, $routeParams, $http, $sce) {
+app.controller("genreCtrl", function ($scope, $routeParams, $http, $sce, $location) {
 	$scope.genreId = $routeParams.g;
 	$scope.showMusicInfo = false;
 	$scope.chosenTrack = $sce.trustAsResourceUrl("about:blank");
@@ -57,12 +66,19 @@ app.controller("genreCtrl", function ($scope, $routeParams, $http, $sce) {
 		params : {genreId : $scope.genreId}
     }).then(function mySuccess(response) {
         $scope.playlistData = response.data;
+		
+		if($scope.playlistData === "Error" || $scope.playlistData.error !== undefined || $scope.playlistData === ""){
+			var curPath = $location.path();
+			$location.path("/error/" + $scope.genreId);
+		}
+		
 		$scope.tracks = $scope.playlistData.tracks.items;
 		
 		$scope.title = $scope.playlistData.name;
 		$scope.desc = $sce.trustAsHtml($scope.decodeHtml($scope.playlistData.description));
     }, function myError(response) {
-        $scope.playlistData = response.statusText;
+		var curPath = $location.path();
+		$location.path("/error/" + $scope.genreId);
     });
 	
 	$scope.showTrack = function(event){
@@ -86,6 +102,8 @@ app.controller("genreCtrl", function ($scope, $routeParams, $http, $sce) {
 	}
 	
 });
+
+app.controller("errorCtrl", function ($scope) {});
 
 app.filter('artists', function() {
   return function(input) {
