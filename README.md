@@ -12,7 +12,6 @@ Check out a live version of the site, at http://www.benjamescook.com/knowmusic/
 - [x] Improve visuals to look more attractive
 - [x] Error handling
 - [x] Fix up mobile visuals
-- [ ] Split Angular in to separate files
-- [ ] Minify code
-- [ ] Documentation
-- [ ] Some other stuff I'll remember later
+- [x] Split Angular in to separate files
+- [x] Minify code
+- [ ] Documentation (As in, just comment it. I'm not writing up a whole bunch of booklets on how to use something this simple.)
