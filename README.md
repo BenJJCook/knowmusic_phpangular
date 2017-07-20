@@ -2,7 +2,7 @@
 A website that introduces the essential songs for each genre, to give people a kickstart when getting in to a new one. Uses the Spotify API, and I plan to utilise PHP with Angular here (would use node.js but the hosting company doesn't support it).
 
 # Note
-The core of this project is mostly done. I just want to pretty it up before I consider it version 1.0. Also, there's hardly any error handling, so I need to put in some Tech Diff screens, and redirects.
+All the main functionality of this website is in place. I would like to add a few extras (like sub-genres) and just pretty up the website in general, but those are post v1.0 things, so no need to worry right now.
 
 Check out a live version of the site, at http://www.benjamescook.com/knowmusic/
 
