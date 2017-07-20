@@ -17,7 +17,11 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
-		<script src="js/scripts.js"></script>
+		
+		<script src="js/angular/app.min.js"></script>
+		<script src="js/angular/controllers/mainController.min.js"></script>
+		<script src="js/angular/controllers/genreController.min.js"></script>
+		<script src="js/angular/filters/artistsFilter.min.js"></script>
 	</head>
 	
 	<body>
